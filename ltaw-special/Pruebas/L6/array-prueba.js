@@ -9,16 +9,26 @@ const  tienda_json = fs.readFileSync(FICHERO_JSON);
 
 //-- Crear la estructura tienda a partir del contenido del fichero
 const tienda = JSON.parse(tienda_json);
-
+username = 'Manuel';
+direction = 'Moreno Nieto';
+card_number = '123456789';
+function Crear_Pedido(username,direction,card_number) {
+    this = new Object();
+    this.username = username;
+    this.direction = direction;
+    this.card_number = card_number;
+    this.products = {};
+}
 //-- Cantidad de pedidos realizados
 number_orders = tienda[2]["pedidos"].length;
+tienda[2]["pedidos"][number_orders] = Crear_Pedido(username,direction,card_number)
 console.log(number_orders);
 //-- Añadir los pedidos al JSON
-tienda[2]["pedidos"][number_orders] = new Object();
+/*tienda[2]["pedidos"][number_orders] = new Object();
 tienda[2]["pedidos"][number_orders].username = 'Manuel';
 tienda[2]["pedidos"][number_orders].direction = 'Moreno';
 tienda[2]["pedidos"][number_orders].card_number = '123456789';
-tienda[2]["pedidos"][number_orders].products = {};
+tienda[2]["pedidos"][number_orders].products = {};*/
 
 //-- Convertir la variable a cadena JSON
 let myJSON = JSON.stringify(tienda);
