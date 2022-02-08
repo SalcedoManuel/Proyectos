@@ -17,16 +17,19 @@
     "build": {
         "appId": "questionnaire-1-id",
         "productName": "MyQuestionnaire",
-        "copyright": "Copyright © 2021 ${author}",
+        "copyright": "Copyright © 2022 ${author}",
         "linux": {
             "target": [
                 "AppImage"
             ],
             "category": "Utility"
         }
-        
+    },
+    "win":{
+        "icon": "English.ico"
     },
     "devDependencies": {
-        "electron": "^12.0.6"
+        "electron": "^12.2.3",
+        "electron-builder": "^22.14.13"
     }
 }
