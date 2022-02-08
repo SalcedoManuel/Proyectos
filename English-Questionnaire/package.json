@@ -1,6 +1,6 @@
 {
-    "name": "mi-electron-app",
-    "description": "Estas es mi primera aplicación de escritorio en Electron",
+    "name": "questionnaire-app",
+    "description": "Questionnaire Application ",
     "version": "0.1.0",
     "main": "main.js",
     "author": {
@@ -15,13 +15,16 @@
         "postinstall": "electron-builder install-app-deps"
     },
     "build": {
-        "appId": "mi-electron-app-1-id",
+        "appId": "questionnaire-1-id",
+        "productName": "MyQuestionnaire",
+        "copyright": "Copyright © 2021 ${author}",
         "linux": {
             "target": [
                 "AppImage"
             ],
             "category": "Utility"
         }
+        
     },
     "devDependencies": {
         "electron": "^12.0.6"

@@ -1,5 +1,6 @@
 //-- Cargar el módulo de electron
 const electron = require('electron');
+const {app} = electron
 
 console.log("Arrancando electron...");
 
@@ -16,7 +17,7 @@ electron.app.on('ready', () => {
     win = new electron.BrowserWindow({
         width: 600,   //-- Anchura 
         height: 600,  //-- Altura
-
+        icon:  'English.ico',
         //-- Permitir que la ventana tenga ACCESO AL SISTEMA
         webPreferences: {
           nodeIntegration: true,
