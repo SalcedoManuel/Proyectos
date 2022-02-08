@@ -1,0 +1,14 @@
+[{"verbs":[{"name":"to Hang out","definition":"Colgar","description":"Colgar ropa o el telefono"},
+           {"name":"to Take off","definition":"Quitar","description":"Quitarse o despegar un avión"},
+           {"name":"to Land","definition":"Aterrizar","description":"Aterrizar un avión"},
+           {"name":"to Draw","definition":"Atraer o Dibujar","description":"Atraer o dibujar algo"},
+           {"name":"to Shake","definition":"Agitar o dar la mano","description":"agiatr algo o dar la mano (to shake hands)"},
+           {"name":"to Reach","definition":"Alcanzar","description":"Alcanzar algo"},
+           {"name":"to Reach for","definition":"Intentar Alcanzar","description":"Intentar Alcanzar"},
+           {"name":"to Arrange","definition":"Organizar","description":"Organizar una reunión o tú mismo"}
+           ]},
+ {"none":[{"name":"Drawer","definition":"Cajón","description":""},
+          {"name":"Briefcase","definition":"Maletín","description":""},
+          {"name":"Chack","definition":"Tiza","description":""},
+          {"name":"Chackboard","definition":"Pizarra","description":"Blackboard"}
+    ]}]
