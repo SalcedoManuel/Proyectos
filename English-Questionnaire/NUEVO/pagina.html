@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="AUTHOR" content="jvaamond@fresno.pntic.mec.es y crisdiaz@telecable.es">
+<title>English Test</title>
+<head>
+<SCRIPT LANGUAGE="JavaScript">
+
+var alfab="abcdefghijklmnñopqrstuvxyz"
+var nump=2
+var nrp=3
+function corrixe(){
+	var acertos=0
+	var sol=""
+	fiestrar=open("","novar","width=300,height=350,scrollbars")
+	fiestrar.document.write("<table border='0' width='100%' cellspacing='0' cellpadding='4' bgcolor='#FFFFF2'><tr><td><p align='center'>")
+	for(i=1;i<=nump;i++){
+		var senresp=true 
+		for(j=1;j<=nrp;j++){
+			if(eval("document.test.resp"+i+"["+(j-1)+"].checked")==true){
+				sol+=alfab.substring(j-1,j);
+				senresp=false;
+				break
+			}
+		}
+		if(senresp==true){
+			sol+="-"
+		}
+	}
+	var tempo= new Date()
+	fiestrar.document.write("<br>Hora: "+tempo.getHours()+":"+tempo.getMinutes())
+	fiestrar.document.write("<br>Fecha: "+tempo.getDate()+"/"+eval(tempo.getMonth()+1)+"/"+tempo.getFullYear())
+	fiestrar.document.write("<p align='center'><table>")
+	fiestrar.document.write("<tr><td colspan='4' align='center'><font size='5'>Resultados del test</font><p></td></tr>")
+	fiestrar.document.write("<tr><td width='33' bgcolor='#FFF4F4'>"+
+	"<p align='center'>Preg</td><td width='35' bgcolor='#FFF4F4' align='center'>"+
+	"Solu</td><td width='35' bgcolor='#FFF4F4' align='center'>Resp</td>"+
+	"<td width='35' bgcolor='#FFF4F4'><p align='center'>Resul</td></tr>")
+	for(i=1;i<=sol.length;i++){
+		// Resposta es la solución correcta.
+		resposta=document.test.tras.value.substring(i-1,i)
+		console.log("Valor de resposta: ")
+		console.log(document.test.tras.value)
+		// Solución es la elección escogida.
+		solucion=sol.substring(i-1,i)
+		// Si la Respuesta escogida es igual a la Solución es un acierto.	
+		if(resposta==solucion){
+			acertos+=1
+			fiestrar.document.write("<tr><td align='center'>"+i+
+			"</td><td align='center'>"+resposta+"</td><td align='center'>"+solucion+
+			"</td><td align='center'><font color='#009933'>acierto</font></td></tr>")
+		}else{
+			fiestrar.document.write("<tr><td align='center'>"+i+"</td><td align='center'>"+resposta+
+			"</td><td align='center'>"+solucion+"</td><td align='center'><font color='#FF0000'>fallo</font></td></tr>")
+		}
+	}
+	nota=10/nump*acertos;
+	if(Math.floor(nota)!=Math.ceil(nota)){
+		cadea=""+nota;
+		for(var i=0;i<=cadea.length;i++){
+			if(cadea.charAt(i)=="."){
+				nota=cadea.substring(0,i+3);
+				break;
+			}
+		}
+	}
+	fiestrar.document.write("<tr><td colspan='4' align='center'>Aciertos: "+acertos+" de "+nump+"</td></tr>")
+	fiestrar.document.write("<tr><td colspan='4' align='center'>Nota: "+nota+"</td></tr>")
+	fiestrar.document.write("</td></tr><tr><td colspan='4' align='center'><p><form><input type='button' value='Cerrar' name='pecharf' onClick='window.close()' style='background-color: #FFCC66'></form></td></tr></table></td></tr></table>")
+	fiestrar.document.write("</table>")
+	fiestrar.document.close()
+}
+
+</SCRIPT>
+</head>
+<body>
+<form name="test">
+<table width="100%"><tr><td align="center"><table>
+<tr>
+<td>
+<p align="center">TestMatrik</td>
+</tr></table></td></tr><tr><td>
+<table><tr><td><font size="4" color="#FF00FF">1. </font></td><td bgcolor="#F2FFF2" width="100%">Question1</td></tr></table>
+<table><tr><td width="25">&nbsp;</td><td>a) </td><td><input type="radio" name="resp1"></td><td>pi</td></tr></table>
+<table><tr><td width="25">&nbsp;</td><td>b) </td><td><input type="radio" name="resp1"></td><td>phi</td></tr></table>
+<table><tr><td width="25">&nbsp;</td><td>c) </td><td><input type="radio" name="resp1"></td><td>e</td></tr></table>
+</td></tr>
+<table><tr><td><font size="4" color="#FF00FF">1. </font></td><td bgcolor="#F2FFF2" width="100%">Question1</td></tr></table>
+<table><tr><td width="25">&nbsp;</td><td>a) </td><td><input type="radio" name="resp2"></td><td>pi</td></tr></table>
+<table><tr><td width="25">&nbsp;</td><td>b) </td><td><input type="radio" name="resp2"></td><td>phi</td></tr></table>
+<table><tr><td width="25">&nbsp;</td><td>c) </td><td><input type="radio" name="resp2"></td><td>e</td></tr></table>
+</td></tr>
+<tr><td align="center" height="50"><input type="hidden" value="ac" name="tras">		
+<input type="button" value="Puntuación" name="resultados" onClick="corrixe()" style="background-color: #FFCC66">
+<input type="reset" value="Limpiar" name="limpar" style="background-color: #FFCC66"></td></tr>
+</td></tr></table></form>
+</body>
+</html>

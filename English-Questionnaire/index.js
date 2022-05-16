@@ -28,7 +28,6 @@ const print = document.getElementById("print");
 //--info2.textContent = process.platform;
 //--info3.textContent = process.cwd();
 
-
 btn_test.onclick = () => {
     console.log("Botón apretado!");
 
